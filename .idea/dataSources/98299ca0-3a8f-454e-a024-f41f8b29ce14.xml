@@ -793,9 +793,9 @@ false Zulu
     <database id="3" parent="1" name="pharmacy">
       <ObjectId>16526</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>683</IntrospectionStateNumber>
-      <Relations>sequence|table|16527|16529|1
-sequence|table|16534|16536|1
+      <IntrospectionStateNumber>737</IntrospectionStateNumber>
+      <Relations>sequence|table|16599|16601|1
+sequence|table|16606|16608|1
 </Relations>
     </database>
     <database id="4" parent="1" name="phonebook">
@@ -883,7 +883,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>684</IntrospectionStateNumber>
+      <IntrospectionStateNumber>738</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="21" parent="3" name="plpgsql">
@@ -61646,26 +61646,26 @@ r/10
       <DefaultClass>1</DefaultClass>
     </operator-class>
     <sequence id="5142" parent="20" name="doctor_entity_id_seq">
-      <ObjectId>16527</ObjectId>
+      <ObjectId>16599</ObjectId>
       <Owner>root</Owner>
-      <StateNumber>610</StateNumber>
+      <StateNumber>717</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <sequence id="5143" parent="20" name="pet_entity_id_seq">
-      <ObjectId>16534</ObjectId>
+      <ObjectId>16606</ObjectId>
       <Owner>root</Owner>
-      <StateNumber>611</StateNumber>
+      <StateNumber>718</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <table id="5144" parent="20" name="doctor_entity">
-      <ObjectId>16529</ObjectId>
+      <ObjectId>16601</ObjectId>
       <Owner>root</Owner>
-      <StateNumber>645</StateNumber>
+      <StateNumber>719</StateNumber>
     </table>
     <table id="5145" parent="20" name="pet_entity">
-      <ObjectId>16536</ObjectId>
+      <ObjectId>16608</ObjectId>
       <Owner>root</Owner>
-      <StateNumber>612</StateNumber>
+      <StateNumber>719</StateNumber>
     </table>
     <check id="5146" parent="33" name="cardinal_number_domain_check">
       <ObjectId>13172</ObjectId>
@@ -109641,31 +109641,19 @@ umserver</ColNames>
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>610</StateNumber>
+      <StateNumber>717</StateNumber>
       <TypeId>20</TypeId>
       <IdentityKind>by-default</IdentityKind>
     </column>
     <column id="16107" parent="5144" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>610</StateNumber>
+      <StateNumber>717</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="16108" parent="5144" name="doctor_id">
-      <Position>3</Position>
-      <DataType>bigint|0s</DataType>
-      <StateNumber>630</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="16109" parent="5144" name="pet_id">
-      <Position>4</Position>
-      <DataType>bigint|0s</DataType>
-      <StateNumber>645</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <index id="16110" parent="5144" name="doctor_entity_pkey">
-      <ObjectId>16532</ObjectId>
-      <StateNumber>610</StateNumber>
+    <index id="16108" parent="5144" name="doctor_entity_pkey">
+      <ObjectId>16604</ObjectId>
+      <StateNumber>717</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -109673,63 +109661,43 @@ umserver</ColNames>
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="16111" parent="5144" name="doctor_entity_pkey">
-      <ObjectId>16533</ObjectId>
-      <StateNumber>610</StateNumber>
+    <key id="16109" parent="5144" name="doctor_entity_pkey">
+      <ObjectId>16605</ObjectId>
+      <StateNumber>717</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>doctor_entity_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="16112" parent="5144" name="fkaun4fh3bgy44akw3c62inus7d">
-      <ObjectId>16570</ObjectId>
-      <StateNumber>631</StateNumber>
-      <ColNames>doctor_id</ColNames>
-      <RefTableId>16536</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>pet_entity</RefTableName>
-      <RefKeyName>pet_entity_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="16113" parent="5144" name="fk3ijelhvd4ns81b5eg3edrey04">
-      <ObjectId>16575</ObjectId>
-      <StateNumber>646</StateNumber>
-      <ColNames>pet_id</ColNames>
-      <RefTableId>16536</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>pet_entity</RefTableName>
-      <RefKeyName>pet_entity_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="16114" parent="5145" name="id">
+    <column id="16110" parent="5145" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>611</StateNumber>
+      <StateNumber>718</StateNumber>
       <TypeId>20</TypeId>
       <IdentityKind>by-default</IdentityKind>
     </column>
-    <column id="16115" parent="5145" name="healthy">
+    <column id="16111" parent="5145" name="healthy">
       <Position>2</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>611</StateNumber>
+      <StateNumber>718</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="16116" parent="5145" name="name">
+    <column id="16112" parent="5145" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>611</StateNumber>
+      <StateNumber>718</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="16117" parent="5145" name="doctor_id">
+    <column id="16113" parent="5145" name="pet_id">
       <Position>4</Position>
       <DataType>bigint|0s</DataType>
-      <StateNumber>611</StateNumber>
+      <StateNumber>718</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="16118" parent="5145" name="pet_entity_pkey">
-      <ObjectId>16539</ObjectId>
-      <StateNumber>611</StateNumber>
+    <index id="16114" parent="5145" name="pet_entity_pkey">
+      <ObjectId>16611</ObjectId>
+      <StateNumber>718</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -109737,18 +109705,18 @@ umserver</ColNames>
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="16119" parent="5145" name="pet_entity_pkey">
-      <ObjectId>16540</ObjectId>
-      <StateNumber>611</StateNumber>
+    <key id="16115" parent="5145" name="pet_entity_pkey">
+      <ObjectId>16612</ObjectId>
+      <StateNumber>718</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>pet_entity_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="16120" parent="5145" name="fk96vuiff7mnabuaegal2prhv29">
-      <ObjectId>16541</ObjectId>
-      <StateNumber>612</StateNumber>
-      <ColNames>doctor_id</ColNames>
-      <RefTableId>16529</RefTableId>
+    <foreign-key id="16116" parent="5145" name="fkgp7l5hghs2btcmt4xs63o9vhx">
+      <ObjectId>16613</ObjectId>
+      <StateNumber>719</StateNumber>
+      <ColNames>pet_id</ColNames>
+      <RefTableId>16601</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>doctor_entity</RefTableName>
       <RefKeyName>doctor_entity_pkey</RefKeyName>

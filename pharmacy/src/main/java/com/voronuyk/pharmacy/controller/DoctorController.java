@@ -2,20 +2,19 @@ package com.voronuyk.pharmacy.controller;
 
 import com.voronuyk.pharmacy.entity.DoctorEntity;
 import com.voronuyk.pharmacy.entity.PetEntity;
+import com.voronuyk.pharmacy.exception.DoctorException;
+import com.voronuyk.pharmacy.exception.PetException;
 import com.voronuyk.pharmacy.service.DoctorService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/doctor")
+@AllArgsConstructor
 public class DoctorController {
-    @Autowired
     DoctorService doctorService;
-
-
 
     @GetMapping
     public List<DoctorEntity> findAllBy(){
@@ -23,23 +22,25 @@ public class DoctorController {
     }
 
     @GetMapping("/{id}")
-    public Optional<DoctorEntity> getById(@PathVariable Long id){
+    public DoctorEntity getById(@PathVariable Long id) throws DoctorException {
         return doctorService.findById(id);
     }
     @PostMapping("/post")
     public DoctorEntity createDoctor(@RequestBody DoctorEntity doctorEntity){
         return doctorService.create(doctorEntity);
     }
+
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
         return doctorService.delete(id);
     }
+
     @PostMapping("/post/{id}")
-    public String createPet(@RequestBody PetEntity petEntity, @PathVariable Long id){
+    public DoctorEntity createPet(@RequestBody PetEntity petEntity, @PathVariable Long id) throws DoctorException {
         return doctorService.createPet(petEntity,id);
     }
-    @GetMapping("/add/{id}/{id}")
-    public DoctorEntity addPetInDoctor(@PathVariable Long doctorId, @PathVariable Long petId){
+    @GetMapping("/add/{doctorId}/{petId}")
+    public DoctorEntity addPetInDoctor(@PathVariable Long doctorId, @PathVariable Long petId) throws DoctorException, PetException {
         return doctorService.addPetInDoctor(doctorId,petId);
     }
 }
