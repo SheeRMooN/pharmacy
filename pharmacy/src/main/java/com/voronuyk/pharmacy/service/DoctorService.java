@@ -8,6 +8,9 @@ import com.voronuyk.pharmacy.repository.DoctorRepo;
 import com.voronuyk.pharmacy.repository.PetRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -38,6 +41,7 @@ public class DoctorService {
         petEntity.setDoctor(doctorEntity); //+
         return doctorRepo.save(doctorEntity);
     }
+
     public DoctorEntity addPetInDoctor(Long doctorId, Long petId) throws DoctorException, PetException {
         DoctorEntity doctorEntity = doctorRepo.findById(doctorId).orElseThrow(() -> new DoctorException("doctor not found"));
         PetEntity petEntity = petRepo.findById(petId).orElseThrow(()-> new PetException("pet not found"));
